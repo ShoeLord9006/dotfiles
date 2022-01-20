@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/blake/Documents'
+let g:netrw_dirhist_2='/home/blake/Music'
+let g:netrw_dirhist_1='/home/blake/Documents/University/PDI/midsem'
+let g:netrw_dirhist_0='/home/blake'
+let g:netrw_dirhist_9='/home/blake/Documents/University/PDI/midsem'
+let g:netrw_dirhist_8='/home/blake/Documents'
+let g:netrw_dirhist_7='/home/blake'
+let g:netrw_dirhist_6='/home/blake/Documents'
+let g:netrw_dirhist_5='/home/blake'
+let g:netrw_dirhist_4='/home/blake/Documents'

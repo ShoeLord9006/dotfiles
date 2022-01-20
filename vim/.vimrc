@@ -3,6 +3,8 @@ filetype on
 filetype plugin indent on
 set modeline
 
+set foldmethod=marker
+
 set showcmd
 "set noshowmode
 set number
@@ -85,6 +87,7 @@ function! ListStuff()
     echo "Keybinds - Function Keys"
     echo "F1  - N     - This Menu"
     echo "F2  - N     - Reload ~/.vimrc"
+    echo "F4  - NI    - Open/Close a Fold"
     echo "F5  - NI    - Write DateTime into buffer"
     echo "F9  - N     - Save and compile currently open *.java file"
     echo "F10 - N     - Opens new empty tab, with CtrlP"
@@ -114,3 +117,14 @@ endfunction
 
 nnoremap  :call Boop()
 nnoremap <F10> :call Boop()
+
+set colorcolumn=81,161
+hi ColorColumn ctermbg=0
+
+let g:airline#extensions#whitespace#enabled = 0
+
+"nnoremap <F8> :set list!
+set list
+set listchars=trail:~ ",eol:$
+
+inoremap <F8> <Esc>pa

@@ -1,0 +1,5 @@
+# vim: filetype=sh
+
+export EDITOR=vim
+
+export MANPAGER="vim -M +MANPAGER -"

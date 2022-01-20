@@ -3,8 +3,11 @@ filetype on
 filetype plugin indent on
 set modeline
 
+<<<<<<< HEAD
 set foldmethod=marker
 
+=======
+>>>>>>> ba78418672d1eba759d062ba3583ad4765f114ed
 set showcmd
 "set noshowmode
 set number
@@ -58,7 +61,11 @@ set ttimeoutlen=50
 "ULTIMATE MACROS
 ab sout System.out.println("");
 "Create blank java file
+<<<<<<< HEAD
 let @j=':set filetype=javai/*FILE: =expand("%:t")AUTHOR: Blake Lamond (20183606)PURPOSE:*/import java.util.*;public class =expand("%:r"){public static void main(String[] args){}}13ggS'
+=======
+let @j='i/*FILE: =expand("%:t")AUTHOR: Blake Lamond (20183606)PURPOSE:*/import java.util.*;public class =expand("%:r"){public static void main(String[] args){}}13ggS'
+>>>>>>> ba78418672d1eba759d062ba3583ad4765f114ed
 "Reload vimrc
 nnoremap <F2> :source ~/.vimrc
 "Insert date/time
@@ -87,7 +94,10 @@ function! ListStuff()
     echo "Keybinds - Function Keys"
     echo "F1  - N     - This Menu"
     echo "F2  - N     - Reload ~/.vimrc"
+<<<<<<< HEAD
     echo "F4  - NI    - Open/Close a Fold"
+=======
+>>>>>>> ba78418672d1eba759d062ba3583ad4765f114ed
     echo "F5  - NI    - Write DateTime into buffer"
     echo "F9  - N     - Save and compile currently open *.java file"
     echo "F10 - N     - Opens new empty tab, with CtrlP"
@@ -106,10 +116,16 @@ endfunction
 "au BufAdd,BufNewFile * nested tab sball
 "au BufAdd * nested tab sball
 
+<<<<<<< HEAD
 
 inoremap <F4> za
 nnoremap <F4> za
 
+=======
+cmap w!! w !sudo tee > /dev/null %
+
+set backspace=indent,eol,start
+>>>>>>> ba78418672d1eba759d062ba3583ad4765f114ed
 
 function! Boop()
     tabnew
@@ -118,6 +134,7 @@ endfunction
 
 nnoremap  :call Boop()
 nnoremap <F10> :call Boop()
+<<<<<<< HEAD
 
 set colorcolumn=81,161
 hi ColorColumn ctermbg=0
@@ -129,3 +146,5 @@ set list
 set listchars=trail:~ ",eol:$
 
 inoremap <F8> <Esc>pa
+=======
+>>>>>>> ba78418672d1eba759d062ba3583ad4765f114ed

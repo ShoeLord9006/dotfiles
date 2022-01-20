@@ -1,0 +1,12 @@
+# vim: filetype=sh
+
+source_dir=$(dirname $BASH_SOURCE)
+
+source $source_dir/env
+source $source_dir/aliases
+source $source_dir/pureline/pureline $source_dir/pureline/pureline.conf
+
+export PATH=$PATH:~/.bash/bin
+
+#overrides for freebsd compatability
+#source $source_dir/freebsd

@@ -128,3 +128,6 @@ set list
 set listchars=trail:~ ",eol:$
 
 inoremap <F8> <Esc>pa
+
+nnoremap <F4> za
+inoremap <F4> <C-O>za

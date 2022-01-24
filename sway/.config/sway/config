@@ -193,6 +193,7 @@ bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%-
 bindsym XF86AudioMute exec amixer sset Master toggle
 
+bindsym $mod+shift+s exec systemctl suspend
 
 #exec --no-startup-id i3-msg 'workspace $ws3; exec discord'
 

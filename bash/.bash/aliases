@@ -11,6 +11,10 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
+#MOUNT OCEAN
+alias oceanstart='sshfs storage:/ocean /mnt/ocean'
+alias oceanstop='umount /mnt/ocean'
+
 function vimopen {
     if [[ $1 == /* ]]
     then

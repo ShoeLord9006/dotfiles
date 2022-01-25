@@ -66,6 +66,7 @@ window#waybar.chromium {
 }
 
 #clock,
+#custom-clock,
 #battery,
 #cpu,
 #memory,
@@ -98,7 +99,7 @@ window#waybar.chromium {
     margin-right: 0;
 }
 
-#clock {
+#clock #custom-clock {
     background-color: #64727D;
 }
 

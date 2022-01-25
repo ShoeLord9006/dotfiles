@@ -4,8 +4,8 @@
 #alias backup='tar -cf ./shellbackup.tar -C ~/ .bash .bashrc .vim .vimrc'
 
 #CURTIN LAB SSH
-alias getmachine='curl -s http://rtserver.ashtech.one/lab'
-alias sshc='ssh 20183606@$(getmachine)'
+#alias getmachine='curl -s http://rtserver.ashtech.one/lab'
+#alias sshc='ssh 20183606@$(getmachine)'
 
 #REGULAR ALIASES
 alias ls='ls --color=auto'

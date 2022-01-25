@@ -203,7 +203,17 @@ bindsym XF86AudioMute exec amixer sset Master toggle
 #gaps inner 15
 #gaps outer -15
 
+#Set background
 output "*" bg ~/wallpaper.jpg fill
 
+#Enable notifications
 exec mako
+
+#Enable Bar down the bottom
 exec waybar
+
+#Enable idle timeout
+exec swayidle -w \
+    timeout 120 'swaymsg "output * dpms off"' \
+    timeout 300 'systemctl suspend' \
+    resume 'swaymsg "output * dpms on"'

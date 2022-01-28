@@ -14,6 +14,10 @@ alias grep='grep --color=auto'
 #MOUNT OCEAN
 alias oceanstart='sshfs storage:/ocean /mnt/ocean'
 alias oceanstop='umount /mnt/ocean'
+#MOUNT ARK-1
+alias ark-1start='sshfs ark-1:/ /mnt/ark-1'
+alias ark-1stop='umount /mnt/ark-1'
+
 
 function vimopen {
     if [[ $1 == /* ]]

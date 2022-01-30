@@ -1,0 +1,54 @@
+#/usr/bin/env bash
+
+#Replicates NixOs's ability to show matching packages if a command isnt found
+#and also replicates NixOs's NIX_AUTO_RUN
+
+if [ "$(which nix)" != "" ] && [ "$(which nix)" != "/run/current-system/sw/bin/nix" ]
+then
+    function command_not_found_handle {
+        if [ ! -f "$HOME/.cache/nix/nix-programs.sqlite" ]
+        then
+            echo "No nix-programs.sqlite found. Please run update_command_not_found_handle"
+            echo "$1: Command not found"
+            return
+        fi
+        _NIXPACKAGES=$(sqlite3 -separator $'\t' $HOME/.cache/nix/nix-programs.sqlite "select package from programs where name = '$1'" |cut -f 1 |sort)
+        _NIXPACKAGESMAIN=$(echo $_NIXPACKAGES | cut -d " " -f 1 -)
+        if [ "$_NIXPACKAGES" == "" ]; then
+            echo "$1: Command not found"
+        else
+            if [ "$NIX_AUTO_RUN" == "1" ]; then
+                nix run nixpkgs.$_NIXPACKAGESMAIN -c "$@"
+            else
+                echo "The program '$1' is not in your PATH. It is provided by several packages."
+                echo "You can make it available in an ephemeral shell by typing one of the following:"
+                for _NIXPACKAGE in $_NIXPACKAGES
+                do
+                    echo "  nix-shell -p $_NIXPACKAGE"
+                done
+            fi
+        fi
+    }
+
+    function update_command_not_found_handle {
+        wget -q --spider http://google.com
+        if [ $? -eq 0 ]
+        then
+            mkdir -p $HOME/.cache/nix
+            TMPDIR=$(mktemp -d)
+            cd $TMPDIR
+            curl https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz -Ls |tar xJv --wildcards "*programs.sqlite"
+            mv nixos-*/programs.sqlite ~/.cache/nix/nix-programs.sqlite
+            cd --
+            rm -r $TMPDIR
+        else
+            echo "Failed to download programs.sqlite: no network connection"
+        fi
+    }
+
+    if [ ! -f "$HOME/.cache/nix/nix-programs.sqlite" ]
+    then
+        echo "Automatically downloading nix-programs.sqlite"
+        update_command_not_found_handle
+    fi
+fi

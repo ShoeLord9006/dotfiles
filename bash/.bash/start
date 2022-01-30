@@ -2,10 +2,13 @@
 
 source_dir=$(dirname $BASH_SOURCE)
 
-source $source_dir/env
-source $source_dir/aliases
-source $source_dir/pureline/pureline $source_dir/pureline/pureline.conf
+#Files to source
+source $source_dir/env #Environment variables
+source $source_dir/aliases #Aliased
+source $source_dir/nix-command-not-found #See file for details
+source $source_dir/pureline/pureline $source_dir/pureline/pureline.conf #Fancy plugin
 
+#scripts to be added to PATH
 export PATH=$PATH:~/.bash/bin
 
 #overrides for freebsd compatability

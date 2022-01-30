@@ -31,7 +31,7 @@ then
     }
 
     function update_command_not_found_handle {
-        wget -q --spider http://google.com
+        wget -q -T 2 -t 1 --spider http://channels.nixos.org
         if [ $? -eq 0 ]
         then
             mkdir -p $HOME/.cache/nix

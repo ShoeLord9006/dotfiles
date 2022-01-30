@@ -213,6 +213,16 @@ exec mako
 #Enable Bar down the bottom
 exec waybar
 
+#Screenshots
+##Region
+bindsym Print exec grim -g "$(slurp)"
+##Region to clipboard
+bindsym ctrl+Print exec grim -g "$(slurp)" - | wl-copy
+##Focused Window
+bindsym shift+Print exec grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')"
+##Focused window to clipboard
+bindsym ctrl+shift+Print exec grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" - | wl-copy
+
 #Enable idle timeout
 exec swayidle -w \
     timeout 120 'swaymsg "output * dpms off"' \

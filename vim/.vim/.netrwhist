@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/run/media/hannah/hassos-data/supervisor/homeassistant'
 let g:netrw_dirhist_6='/home/blake/.config/waybar'
 let g:netrw_dirhist_5='/home/blake/.config/sway'
 let g:netrw_dirhist_4='/home/hannah/.config/sway'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_1='/home/blake/Documents/University/PDI/midsem'
 let g:netrw_dirhist_0='/home/blake'
 let g:netrw_dirhist_9='/home/blake/Documents/University/PDI/midsem'
 let g:netrw_dirhist_8='/home/blake/Documents'
-let g:netrw_dirhist_7='/home/blake'

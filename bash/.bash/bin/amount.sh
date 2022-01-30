@@ -1,2 +1,2 @@
 #!/bin/sh
-udiskctl mount -b "$@"
+udisksctl mount -b "$@"

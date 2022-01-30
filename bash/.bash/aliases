@@ -11,6 +11,9 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
+#Nixos autorun
+alias nrun='NIX_AUTO_RUN=1'
+
 #MOUNT OCEAN
 alias oceanstart='sshfs storage:/ocean /mnt/ocean'
 alias oceanstop='umount /mnt/ocean'

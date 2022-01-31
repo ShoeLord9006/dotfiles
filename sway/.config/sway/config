@@ -198,7 +198,7 @@ bindsym $mod+Backspace workspace back_and_forth
 
 #Launcher
 #bindsym $mod+Tab exec wofi --show drun
-bindsym $mod+Tab exec "rofi -combi-modi window,drun,ssh,run -show combi -show-icons"; [urgent=latest] focus
+bindsym $mod+Tab exec "rofi -combi-modi window,drun,ssh,run -show combi -show-icons"
 #Window Switcher
 bindsym $mod+Grave exec swaymsg \[con_id=$(swaymsg -t get_tree | jq -r '.nodes | .[] | .nodes | . [] | select(.nodes != null) | .nodes | .[] | select(.name != null) | "\(.id?) \(.name?)"' | rofi -dmenu -i | awk '{print $1}')] focus
 #Switch to urgent window/notification
@@ -250,5 +250,5 @@ bindsym ctrl+shift+Print exec grim -g "$(swaymsg -t get_tree | jq -j '.. | selec
 #Enable idle timeout
 exec swayidle -w \
     timeout 120 'swaymsg "output * dpms off"' \
-    #timeout 300 'systemctl suspend' \
+    \ #timeout 300 'systemctl suspend' \
     resume 'swaymsg "output * dpms on"'

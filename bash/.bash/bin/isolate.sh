@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 tmpdir=$(mktemp -d | tee /dev/stderr)
 mkdir $tmpdir/config
@@ -10,4 +10,4 @@ export XDG_DATA_HOME=$tmpdir/data
 export XDG_STATE_HOME=$tmpdir/state
 export XDG_CACHE_HOME=$tmpdir/cache
 
-exec "$@"
+$@

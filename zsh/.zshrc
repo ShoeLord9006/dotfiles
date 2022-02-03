@@ -70,7 +70,7 @@ ZSH_THEME="custom"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nix-zsh-completions zsh-autosuggestions)
+plugins=(git nix-zsh-completions zsh-autosuggestions nix-shell)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,6 +101,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
+
+#NISOS STUFF CUNT
+
 alias nrun="NIX_AUTO_RUN=1"
 prompt_nix_shell_setup
 
@@ -121,3 +124,16 @@ command_not_found_handler() {
     return 127
   fi
 }
+
+
+#Fuzzy stuff cunt
+
+FZF_PATH="/usr/share/fzf"
+
+# imperative, ew
+if command -v fzf-share > /dev/null; then
+  FZF_PATH=$(fzf-share)
+fi
+
+. "$FZF_PATH/key-bindings.zsh"
+. "$FZF_PATH/completion.zsh"

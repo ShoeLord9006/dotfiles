@@ -90,8 +90,10 @@
       spotify
       htop
       neofetch
+      slurp
+      grim
+      xdg-utils
       #WM/DE Packages
-      networkmanagerapplet
       #swaylock
       #swayidle
       #wl-clipboard
@@ -134,6 +136,9 @@
     p7zip
     unzip
     unrar
+    stow
+    sshfs
+    udisks
   ];
 
   nixpkgs.config.allowUnfree = true; 
@@ -163,6 +168,8 @@
         gtk_engines
         gsettings-desktop-schemas
         lxappearance
+        networkmanagerapplet
+        #xdg-open
       ];
 };
 

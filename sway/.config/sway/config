@@ -224,8 +224,10 @@ bindsym $mod+shift+s exec systemctl suspend
 
 
 
-
-
+#bindsym $mod+z border pixel 2
+#bindsym $mod+z border normal
+default_border pixel 2
+smart_borders on
 
 
 #Set background

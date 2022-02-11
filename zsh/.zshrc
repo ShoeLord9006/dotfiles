@@ -102,6 +102,34 @@ source $ZSH/oh-my-zsh.sh
 
 
 
+
+#Send message to polycule
+function dsend {
+    msg_content="$@"
+    url="https://discord.com/api/webhooks/939087839419826176/-EHWd6DWbm6v0xAXSLOeZi4Co8DCVhbYJX2U9CI7GW79hH1L0u2hBfNW8denB93Ah2JZ" #Webhook url
+    curl -H "Content-Type: application/json" -X POST -d "{\"content\": \"$msg_content\"}" $url
+}
+
+
+
+
+#MOUNT OCEAN
+alias ocean-start='sshfs storage:/ocean /mnt/ocean'
+alias ocean-stop='umount /mnt/ocean'
+
+
+
+#Direnv
+#eval "$(direnv hook zsh)"
+
+
+
+#Python Environments
+pyenv_prompt_info
+
+
+
+
 #NISOS STUFF CUNT
 
 alias nrun="NIX_AUTO_RUN=1"
